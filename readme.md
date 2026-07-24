@@ -303,3 +303,14 @@ Available at http://localhost:5173
 Developed by:
 
 - [Raphael Augusto Paulino Leite](https://github.com/rapael-augusto)
+
+## A Few, Non Technical, Words:
+
+So, I built this project for two reasons:
+1. I like Reverse: 1999.
+2. There wasn't already a Reverse: 1999 Wordle (at least, I don't think there was at the moment).
+
+Even though it started as a small learning project and a way for me to apply what I knew about React, it also became a journey where I learned how to build a proper back end, create animations, work with the HTML canvas, and much more.
+I didn't expect anyone to actually play it, but seeing people enjoy it makes me really proud of having built it.
+
+So, thank you for being here and for witnessing this project. Remember to "Make good use of this umbrella", 'kay?

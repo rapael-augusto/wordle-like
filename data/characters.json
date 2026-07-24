@@ -354,7 +354,7 @@
     "name": "Necrologist",
     "rarity": 5,
     "afflatus": "Mineral",
-    "dmg_type": "Reality",
+    "dmg_type": "Mental",
     "race": "Arcanist",
     "version": 1.0,
     "slug": "necrologist"

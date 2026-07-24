@@ -36,7 +36,7 @@ VALUES
 ('Dikke', 'dikke', 5, 'Beast', 'Mental', 'Arcanist', 1.0),
 ('Sonetto', 'sonetto', 5, 'Mineral', 'Reality', 'Arcanist', 1.0),
 ('Balloon Party', 'balloon-party', 5, 'Mineral', 'Reality', 'Arcanist', 1.0),
-('Necrologist', 'necrologist', 5, 'Mineral', 'Reality', 'Arcanist', 1.0),
+('Necrologist', 'necrologist', 5, 'Mineral', 'Mental', 'Arcanist', 1.0),
 ('Satsuki', 'satsuki', 5, 'Plant', 'Mental', 'Mixed', 1.0),
 ('Matilda', 'matilda', 5, 'Star', 'Mental', 'Arcanist', 1.0),
 ('Tennant', 'tennant', 5, 'Beast', 'Reality', 'Arcanist', 1.0),
