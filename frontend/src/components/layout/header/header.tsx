@@ -145,6 +145,7 @@ export default function Header({
                     type="checkbox"
                     checked={isAnimationOn}
                     onChange={handleAnimationStatusChange}
+                    name="checkbox-input"
                   />
                   <span className="slider"></span>
                 </label>
