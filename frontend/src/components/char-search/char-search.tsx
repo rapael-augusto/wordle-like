@@ -57,6 +57,7 @@ export default function CharacterSearch({
     switch (e.key) {
       case "ArrowDown":
         e.preventDefault();
+        if (filteredCharacters.length === 0) return;
         setSelectedIndex((prev) =>
           Math.min(prev + 1, filteredCharacters.length - 1),
         );
@@ -65,12 +66,13 @@ export default function CharacterSearch({
         e.preventDefault();
         setSelectedIndex((prev) => Math.max(prev - 1, 0));
         break;
-      case "Enter":
+      case "Enter": {
         e.preventDefault();
-        if (selectedIndex >= 0) {
-          await handleGuessAppend(filteredCharacters[selectedIndex].slug);
-        }
+        const selected = filteredCharacters[selectedIndex];
+        if (!selected) return;
+        await handleGuessAppend(selected.slug);
         break;
+      }
     }
   };
 
@@ -122,6 +124,7 @@ export default function CharacterSearch({
         onFocus={() => setIsFocused(true)}
         disabled={disabled}
         onKeyDown={handleKeyDown}
+        name="character-input-search"
       />
 
       {isFocused && isValidSearch && (
