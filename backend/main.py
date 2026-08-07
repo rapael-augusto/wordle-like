@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from zoneinfo import ZoneInfo
 import random
 from psycopg.rows import dict_row
@@ -129,7 +129,7 @@ def guess_attempt_id(id: int, input: SlugInput):
         },
         "afflatus": {
             "value": guess_char["afflatus"],
-            "correct": guess_char["afflatus"] == specific_char["afflatus"],
+            "correct": guess_char["afflatus"] in (specific_char["afflatus"])
         },
         "dmg_type": {
             "value": guess_char["dmg_type"],
@@ -154,4 +154,13 @@ def get_daily_result():
     return {
         "name": daily_char["name"],
         "slug": daily_char["slug"]
+    }
+
+@app.get("/guess/yesterday-result")
+def get_yesterday_result():
+    yesterday = (datetime.now(ZoneInfo("America/Sao_Paulo")) - timedelta(days=1)).date()
+    char = characters[yesterday.toordinal() % len(characters)]
+    return {
+        "name": char["name"],
+        "slug": char["slug"]
     }
