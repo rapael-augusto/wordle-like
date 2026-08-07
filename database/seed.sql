@@ -128,6 +128,8 @@ VALUES
 ('Silverwing Eagle', 'silverwing-eagle', 5, 'Plant', 'Reality', 'Arcanist', 3.7),
 ('Coppélia', 'coppelia', 6, 'Mineral', 'Reality', 'Arcanist', 3.7),
 ('Rhiannon', 'rhiannon', 6, 'Beast', 'Mental', 'Arcanist', 3.7),
-('Ms. Stranger', 'ms-stranger', 6, 'Mineral', 'Mental', 'Arcanist', 3.7)
+('Ms. Stranger', 'ms-stranger', 6, 'Mineral', 'Mental', 'Arcanist', 3.7),
+('The Twins', 'the-twins', 6, 'Mineral/Star', 'Reality', 'Unclassified', 3.65),
+('NORA', 'nora', 4, 'Spirit', 'Reality', 'Unclassified', 3.65)
 
 ON CONFLICT (slug) DO NOTHING;
