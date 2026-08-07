@@ -4,4 +4,5 @@ export type Afflatus =
   | "Beast"
   | "Plant"
   | "Spirit"
-  | "Intellect";
+  | "Intellect"
+  | "Mineral/Star";
