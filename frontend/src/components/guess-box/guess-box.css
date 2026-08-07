@@ -63,6 +63,10 @@
     gap: 0.1rem;
   }
 
+  .guess-cell.small-text {
+    font-size: 0.65rem;
+  }
+
   .guess-character {
     gap: 0.5rem;
     padding: 0.35rem;

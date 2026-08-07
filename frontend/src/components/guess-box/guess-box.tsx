@@ -28,7 +28,12 @@ export default function GuessBox({
   const getComparisonClass = (value: NumericComparison) => {
     return value === true ? "correct" : "partial";
   };
-  const typeAnimation = lastAnimation && allCorrect ? "bounce-animate" : lastAnimation ? "flip-animate" : ""
+  const typeAnimation =
+    lastAnimation && allCorrect
+      ? "bounce-animate"
+      : lastAnimation
+        ? "flip-animate"
+        : "";
 
   return (
     <div className={`guess-container ${lastAnimation ? "fade-in" : ""}`}>
@@ -54,7 +59,8 @@ export default function GuessBox({
       </div>
 
       <div
-        className={`guess-cell ${guessResult.afflatus.correct ? "correct" : "incorrect"} ${typeAnimation}`}>
+        className={`guess-cell ${guessResult.afflatus.correct ? "correct" : "incorrect"} ${typeAnimation}`}
+      >
         {guessResult.afflatus.value}
       </div>
 
@@ -65,7 +71,9 @@ export default function GuessBox({
       </div>
 
       <div
-        className={`guess-cell ${guessResult.race.correct ? "correct" : "incorrect"} ${typeAnimation}`}
+        className={`guess-cell ${
+          guessResult.race.correct ? "correct" : "incorrect"
+        } ${typeAnimation} ${guessResult.race.value.length > 10 ? "small-text" : ""}`}
       >
         {guessResult.race.value}
       </div>
