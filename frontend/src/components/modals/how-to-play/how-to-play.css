@@ -29,20 +29,40 @@
 }
 
 .how-to-play-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.how-to-play-button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
 }
 
 .close-modal {
-    background: transparent;
-    border: none;
-    color: var(--font-color);
-    font-size: 1.2rem;
-    cursor: pointer;
-    position: sticky;
+  background: transparent;
+  border: none;
+  color: var(--font-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: sticky;
+}
+
+.arrow-modal {
+  background: transparent;
+  border: none;
+  color: var(--font-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: sticky;
 }
 
 section p {
-    margin-bottom: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.changelog-version:not(:last-child) {
+  margin-bottom: 1rem;
 }

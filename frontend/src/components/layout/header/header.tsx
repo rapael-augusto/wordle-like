@@ -24,15 +24,23 @@ export default function Header({
   setLanguage,
   language,
 }: HeaderProps) {
+  const { t } = useTranslation();
+  const changelog = t("changelog", { returnObjects: true }) as Record<
+    string,
+    unknown
+  >;
+  const CHANGELOG_VERSION = Object.keys(changelog)[0];
+
   const [isThemeDropdownOpen, setIsThemeDropdownOpen] = useState(false);
   const [isSettingsDropdownOpen, setIsSettingsDropdownOpen] = useState(false);
   const [isHtpModalOpen, setIsHtpModalOpen] = useState(() => {
     const saved = localStorage.getItem("statistics");
+    const lastSeenChangelog = localStorage.getItem("changelog-version");
     if (!saved) return true;
+    if (lastSeenChangelog !== CHANGELOG_VERSION) return true;
     else return false;
   });
   const [isStatisticsModalOpen, setIsStatisticsModalOpen] = useState(false);
-  const { t } = useTranslation();
   const settingsRef = useRef<HTMLDivElement>(null);
   const themeRef = useRef<HTMLDivElement>(null);
   const themeButtonRef = useRef<HTMLButtonElement>(null);
@@ -52,6 +60,11 @@ export default function Header({
   const openSettingsDropdown = () => {
     setIsThemeDropdownOpen(false);
     setIsSettingsDropdownOpen((prev) => !prev);
+  };
+
+  const closeHtpModal = () => {
+    localStorage.setItem("changelog-version", CHANGELOG_VERSION);
+    setIsHtpModalOpen(false);
   };
 
   const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -89,9 +102,7 @@ export default function Header({
 
   return (
     <header>
-      {isHtpModalOpen && (
-        <HowToPlayModal onClose={() => setIsHtpModalOpen(false)} />
-      )}
+      {isHtpModalOpen && <HowToPlayModal onClose={closeHtpModal} />}
       {isStatisticsModalOpen && (
         <StatisticsModal onClose={() => setIsStatisticsModalOpen(false)} />
       )}
@@ -159,6 +170,7 @@ export default function Header({
                 >
                   <option value={"en"}>English</option>
                   <option value={"pt"}>Português</option>
+                  <option value={"fr"}>Français</option>
                 </select>
               </div>
             </div>
