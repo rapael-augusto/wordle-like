@@ -1,0 +1,104 @@
+{
+  "header": {
+    "howToPlay": "Comment Jouer",
+    "statistics": "Statistiques",
+    "themes": "Thèmes",
+    "settings": "Paramètres",
+    "changelog": "Historique des Modifications",
+    "dropdowns": {
+      "settings": {
+        "animations": "Animations",
+        "on": "On",
+        "off": "Off",
+        "language": "Langues"
+      },
+      "themes": {
+        "default": "The Shelter",
+        "blue": "Glory Regained",
+        "white": "Peace Be With Us",
+        "gray": "Eye of the Storm",
+        "red": "Heartbeat on the Right"
+      }
+    }
+  },
+  "nav": {
+    "daily": "Mode Quotidien",
+    "unlimited": "Mode Infini",
+    "allCharacters": "Tous les Personnages",
+    "yesterday": "Le personnage d'hier était:"
+  },
+  "input": {
+    "placeholderFalse": "Tirez sur le fil d'or... ex : Sonetto ;",
+    "placeholderTrue": "Un vieil ami, de retour à la maison ;",
+    "restartGame": "Rejouer",
+    "result": "Voir le Résultat",
+    "noCharacterFound": "Aucun Personnage Trouvé."
+  },
+  "progress": {
+    "title": "Essais"
+  },
+  "guess": {
+    "character": "Personnage",
+    "version": "Version",
+    "rarity": "Rareté",
+    "afflatus": "Afflatus",
+    "damageType": "Type de Dégâts",
+    "race": "Race",
+    "correct": "Correcte",
+    "partial": "Partielle",
+    "wrong": "Incorrecte"
+  },
+  "footer": {
+    "basedOn": "Basé sur",
+    "by": "par Bluepoch",
+    "inspiredBy": "Inspiré par",
+    "and": "et",
+    "madeBy": "Créé avec soin par \"R\".",
+    "feedback": "ici !"
+  },
+  "htpModal": {
+    "basics": "Les Bases :",
+    "line1": "Chaque jour, un nouveau personnage est sélectionné pour être deviné, ex :",
+    "line2": "Pour la Version et la Rareté :",
+    "line3": "• ↑ signifie que la réponse est supérieure à ta proposition.",
+    "line4": "• ↓ signifie que la réponse est inférieure à ta proposition.",
+    "line5": "Vert indique une correspondance exacte.",
+    "line6": "Jaune indique une correspondance partielle.",
+    "line7": "Gris indique une correspondance incorrecte.",
+    "notes": "Remarques :",
+    "list1": "Les versions de collaboration sont traitées comme des \"versions et demie\" en fonction de leurs sorties sur le serveur global ;",
+    "list2": "La collaboration AC est considérée comme la version 2.75 car elle se situe entre les versions globales 2.7 et 2.8 ;",
+    "list3": "Les réponses quotidiennes peuvent inclure des personnages actuellement disponibles uniquement sur le serveur CN ;"
+  },
+  "winnerModal": {
+    "title": "Félicitations !",
+    "loseTitle": "Réessaye demain... T-T",
+    "subtitle": "Le personnage était...",
+    "footer": "Prochain personnage dans :",
+    "share": "Partager"
+  },
+  "statisticsModal": {
+    "title1": "Victoires",
+    "title2": "% de Victoires",
+    "title3": "Parties Jouées",
+    "title4": "Moy. d'Essais",
+    "daily": "Mode Quotidien",
+    "unlimited": "Mode Infini",
+    "zero": "Rien à voir ici..., joue d'abord une partie !"
+  },
+  "errorPage": {
+    "subtitle": "Veuillez réactualiser le site web !"
+  },
+  "changelog": {
+    "v1.1": {
+      "date": "2026-08-06",
+      "changes": [
+        "Nouvelle fonctionnalité : journal des mises à jour. Il fait exactement ce que vous imaginez !",
+        "Nouvelle fonctionnalité : historique. Vous pouvez désormais voir quel était le personnage d'hier.",
+        "Nouveaux personnages : The Twins (6★, Mineral/Star) et NORA (4★, Spirit).",
+        "Nouvelle langue : français. Un grand merci à Loxi (@looxii_) pour la traduction !",
+        "Petite amélioration du texte de partage : suppression des espaces entre les émojis."
+      ]
+    }
+  }
+}

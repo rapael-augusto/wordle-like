@@ -4,6 +4,7 @@
     "statistics": "Statistics",
     "themes": "Themes",
     "settings": "Settings",
+    "changelog": "Changelog",
     "dropdowns": {
       "settings": {
         "animations": "Animations",
@@ -23,7 +24,8 @@
   "nav": {
     "daily": "Daily",
     "unlimited": "Unlimited",
-    "allCharacters": "All Characters"
+    "allCharacters": "All Characters",
+    "yesterday": "Yesterday Character Was:"
   },
   "input": {
     "placeholderFalse": "Pull the golden thread... e.g: Sonetto;",
@@ -86,5 +88,17 @@
   },
   "errorPage": {
     "subtitle": "Please reload the website!"
+  },
+  "changelog": {
+    "v1.1": {
+      "date": "2026-08-06",
+      "changes": [
+        "New feature: Changelog. It does exactly what you think it does!",
+        "New feature: History. You can now see who yesterday's character was.",
+        "New characters: The Twins (6★, Mineral/Star) and NORA (4★, Spirit).",
+        "New language: French. Special thanks to Loxi (@looxii_) for the translation!",
+        "Minor share text improvement: removed spaces between emoji tiles."
+      ]
+    }
   }
 }

@@ -4,6 +4,7 @@
     "statistics": "Estatísticas",
     "themes": "Temas",
     "settings": "Configurações",
+    "changelog": "Histórico de Mudanças",
     "dropdowns": {
       "settings": {
         "animations": "Animações",
@@ -23,7 +24,8 @@
   "nav": {
     "daily": "Diário",
     "unlimited": "Ilimitado",
-    "allCharacters": "Todos os Personagens"
+    "allCharacters": "Todos os Personagens",
+    "yesterday": "O Personagem de Ontem Foi:"
   },
   "input": {
     "placeholderFalse": "Puxe o fio dourado... ex.: Sonetto;",
@@ -86,5 +88,17 @@
   },
   "errorPage": {
     "subtitle": "Por favor recarregue o site!"
+  },
+  "changelog": {
+    "v1.1": {
+      "date": "2026-08-06",
+      "changes": [
+        "Novo recurso: Changelog. Faz exatamente o que você tá pensando!",
+        "Novo recurso: Histórico. Agora você pode ver quem foi o personagem de ontem.",
+        "Novos personagens: The Twins (6★, Mineral/Star) e NORA (4★, Spirit).",
+        "Novo idioma: Francês. Agradecimentos especiais à Loxi (@looxii_) pela tradução!",
+        "Pequena melhoria no texto de compartilhar: removidos os espaços entre os emojis."
+      ]
+    }
   }
 }
