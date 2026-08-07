@@ -13,9 +13,11 @@ export default function ProgressBar({
   const { t } = useTranslation();
   return (
     <div className="progress-container">
-      <p>
-        {t("progress.title")}: {currentTries} / {maxTries}{" "}
-      </p>
+      <div className="progress-title-wrapper">
+        <p>
+          {t("progress.title")}: {currentTries} / {maxTries}{" "}
+        </p>
+      </div>
       <div
         className="progress-items-wrapper"
         style={{

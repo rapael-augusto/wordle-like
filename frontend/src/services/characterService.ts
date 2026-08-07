@@ -34,4 +34,9 @@ export class CharacterService {
     const response = await api.get("/guess/daily-result");
     return response.data;
   }
+
+  async getYesterdayResult() {
+    const response = await api.get("/guess/yesterday-result");
+    return response.data;
+  }
 }

@@ -4,6 +4,7 @@
     "statistics": "Statistics",
     "themes": "Themes",
     "settings": "Settings",
+    "changelog": "Changelog",
     "dropdowns": {
       "settings": {
         "animations": "Animations",
@@ -23,7 +24,8 @@
   "nav": {
     "daily": "Daily",
     "unlimited": "Unlimited",
-    "allCharacters": "All Characters"
+    "allCharacters": "All Characters",
+    "yesterday": "Yesterday Character Was:"
   },
   "input": {
     "placeholderFalse": "Pull the golden thread... e.g: Sonetto;",
@@ -66,7 +68,8 @@
     "notes": "Notes:",
     "list1": "Collaboration versions are treated as half versions when comparing release versions;",
     "list2": "The AC Collaboration is considered version 2.75 because it falls between Global versions 2.7 and 2.8;",
-    "list3": "Daily answers may include characters currently available only on the CN server;"
+    "list3": "Daily answers may include characters currently available only on the CN server;",
+    "list4": "Characters with two Afflatus count as correct if you guess either of their Afflatus. For example, if the daily character is Mineral/Star, both Mineral and Star guesses will be marked as correct."
   },
   "winnerModal": {
     "title": "Congratulations!",
@@ -86,5 +89,17 @@
   },
   "errorPage": {
     "subtitle": "Please reload the website!"
+  },
+  "changelog": {
+    "v1.1": {
+      "date": "2026-08-06",
+      "changes": [
+        "New feature: Changelog. It does exactly what you think it does!",
+        "New feature: History. You can now see who yesterday's character was.",
+        "New characters: The Twins (6★, Mineral/Star) and NORA (4★, Spirit).",
+        "New language: French. Special thanks to Loxi (@looxii_) for the translation!",
+        "Minor share text improvement: removed spaces between emoji tiles."
+      ]
+    }
   }
 }

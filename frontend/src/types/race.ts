@@ -4,4 +4,5 @@ export type Race =
   | "Mixed"
   | "Human"
   | "Beyond"
-  | "Infected";
+  | "Infected"
+  | "Unclassified";

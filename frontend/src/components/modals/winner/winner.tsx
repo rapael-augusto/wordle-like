@@ -44,7 +44,7 @@ function guessToEmojis(guess: CharacterGuess): string {
     toEmoji(r.afflatus.correct),
     toEmoji(r.dmg_type.correct),
     toEmoji(r.race.correct),
-  ].join(" ");
+  ].join("");
 }
 
 function buildShareText(

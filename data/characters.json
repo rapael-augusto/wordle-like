@@ -1278,5 +1278,25 @@
     "race": "Arcanist",
     "version": 3.7,
     "slug": "ms-stranger"
+  },
+  {
+    "id": 136,
+    "name": "The Twins",
+    "rarity": 6,
+    "afflatus": "Mineral/Star",
+    "dmg_type": "Reality",
+    "race": "Unclassified",
+    "version": 3.65,
+    "slug": "the-twins"
+  },
+  {
+    "id": 137,
+    "name": "NORA",
+    "rarity": 4,
+    "afflatus": "Spirit",
+    "dmg_type": "Reality",
+    "race": "Unclassified",
+    "version": 3.65,
+    "slug": "nora"
   }
 ]
