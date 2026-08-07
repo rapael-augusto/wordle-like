@@ -8,11 +8,9 @@
   color: var(--font-color);
 }
 
-.progress-wrapper {
+.progress-title-wrapper {
   display: flex;
-  width: 100%;
-  align-items: center;
-  gap: 1rem;
+  justify-content: space-between;
 }
 
 .progress-items-wrapper {
