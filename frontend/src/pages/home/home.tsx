@@ -21,6 +21,8 @@ const characterService = new CharacterService();
 export default function Home() {
   const [characters, setCharacters] = useState<Character[]>([]);
   const [dailyCharacter, setDailyCharacter] = useState<Character | null>(null);
+  const [yesterdayCharacter, setYesterdayCharacter] =
+    useState<Character | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [isWinModalOpen, setIsWinModalOpen] = useState(false);
@@ -36,7 +38,6 @@ export default function Home() {
       return data.date === todayString ? data.guesses : [];
     },
   );
-
   const [isFinished, setIsFinished] = useState(() => {
     const saved = localStorage.getItem("daily-game");
     if (!saved) return false;
@@ -143,7 +144,9 @@ export default function Home() {
     const fetchCharacters = async () => {
       try {
         const data = await characterService.getAllCharactersNames();
+        const yesterdayData = await characterService.getYesterdayResult();
         setCharacters(data);
+        setYesterdayCharacter(yesterdayData);
       } catch (e) {
         setError("Failed to load...");
         console.log(e);
@@ -190,17 +193,7 @@ export default function Home() {
         />
       )}
       <Navbar />
-      <CharacterSearch
-        characters={characters}
-        guessedCharacters={characterGuesses}
-        disabled={isFinished || characterGuesses.length >= MAX_TRIES}
-        onGuess={handleGuessAppend}
-      />
-      <ProgressBar
-        currentTries={characterGuesses.length}
-        maxTries={MAX_TRIES}
-      />
-      {isFinished && (
+      {isFinished ? (
         <div className="result-button-wrapper">
           <button
             className="result-button"
@@ -209,7 +202,21 @@ export default function Home() {
             {t("input.result")}
           </button>
         </div>
+      ) : (
+        <CharacterSearch
+          characters={characters}
+          guessedCharacters={characterGuesses}
+          disabled={isFinished || characterGuesses.length >= MAX_TRIES}
+          onGuess={handleGuessAppend}
+        />
       )}
+      <p className="yesterday-char">
+        {t("nav.yesterday")} {yesterdayCharacter ? yesterdayCharacter.name : ""}
+      </p>
+      <ProgressBar
+        currentTries={characterGuesses.length}
+        maxTries={MAX_TRIES}
+      />
       <GuessHistory guessedCharacters={characterGuesses} />
       <GuessLegend />
     </>
