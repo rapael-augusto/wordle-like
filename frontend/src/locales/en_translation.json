@@ -68,7 +68,8 @@
     "notes": "Notes:",
     "list1": "Collaboration versions are treated as half versions when comparing release versions;",
     "list2": "The AC Collaboration is considered version 2.75 because it falls between Global versions 2.7 and 2.8;",
-    "list3": "Daily answers may include characters currently available only on the CN server;"
+    "list3": "Daily answers may include characters currently available only on the CN server;",
+    "list4": "Characters with two Afflatus count as correct if you guess either of their Afflatus. For example, if the daily character is Mineral/Star, both Mineral and Star guesses will be marked as correct."
   },
   "winnerModal": {
     "title": "Congratulations!",

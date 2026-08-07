@@ -101,7 +101,7 @@ export default function HowToPlayModal({ onClose }: HowToPlayModalProps) {
             <section>
               <h3>{t("htpModal.notes")}</h3>
               <ul>
-                {Array.from({ length: 3 }, (_, index) => {
+                {Array.from({ length: 4 }, (_, index) => {
                   return <li>{t(`htpModal.list${index + 1}`)}</li>;
                 })}
                 <li>Up to 3.7;</li>

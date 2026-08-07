@@ -68,7 +68,8 @@
     "notes": "Obs.:",
     "list1": "Versões de collab são tratadas como \"meias versões\" ao comparar versões de lançamento;",
     "list2": "A collab AC é considerada a versão 2.75, pois está entre as versões globais 2.7 e 2.8;",
-    "list3": "As respostas diárias podem incluir personagens disponíveis atualmente apenas no servidor CN;"
+    "list3": "As respostas diárias podem incluir personagens disponíveis atualmente apenas no servidor CN;",
+    "list4": "Personagens com dois Afflatus consideram qualquer um deles como correto. Por exemplo, se o personagem diário for Mineral/Star, palpites com Mineral ou Star serão marcados como corretos."
   },
   "winnerModal": {
     "title": "Parabéns!",

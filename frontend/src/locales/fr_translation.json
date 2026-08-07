@@ -68,7 +68,8 @@
     "notes": "Remarques :",
     "list1": "Les versions de collaboration sont traitées comme des \"versions et demie\" en fonction de leurs sorties sur le serveur global ;",
     "list2": "La collaboration AC est considérée comme la version 2.75 car elle se situe entre les versions globales 2.7 et 2.8 ;",
-    "list3": "Les réponses quotidiennes peuvent inclure des personnages actuellement disponibles uniquement sur le serveur CN ;"
+    "list3": "Les réponses quotidiennes peuvent inclure des personnages actuellement disponibles uniquement sur le serveur CN ;",
+    "list4": "Les personnages possédant deux Afflatus considèrent chacun d'eux comme correct. Par exemple, si le personnage du jour est Minéral/Étoile, les propositions avec Minéral ou Étoile seront marquées comme correctes."
   },
   "winnerModal": {
     "title": "Félicitations !",
