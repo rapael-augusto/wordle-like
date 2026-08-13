@@ -1,4 +1,4 @@
-## Reverse: 1999 Wordle
+## Reverse: 1999 Wordle (Which is now private)
 
 ---
 
