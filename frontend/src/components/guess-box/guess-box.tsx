@@ -59,7 +59,13 @@ export default function GuessBox({
       </div>
 
       <div
-        className={`guess-cell ${guessResult.afflatus.correct ? "correct" : "incorrect"} ${typeAnimation}`}
+        className={`guess-cell ${
+          guessResult.afflatus.correct === true
+            ? "correct"
+            : guessResult.afflatus.correct === "Half"
+              ? "partial"
+              : "incorrect"
+        } ${typeAnimation}`}
       >
         {guessResult.afflatus.value}
       </div>
