@@ -94,11 +94,9 @@
     "v1.2": {
       "date": "2026-08-17",
       "changes": [
-        "New feature: Changelog. It does exactly what you think it does!",
-        "New feature: History. You can now see who yesterday's character was.",
-        "New characters: The Twins (6★, Mineral/Star) and NORA (4★, Spirit).",
-        "New language: French. Special thanks to Loxi (@looxii_) for the translation!",
-        "Minor share text improvement: removed spaces between emoji tiles."
+        "New feature: Streak. Shows how many consecutive daily games you won!",
+        "Added restart button in unlimited mode, finally;",
+        "Corrected the comparison of 'The Twins' afflatus.."
       ]
     },
     "v1.1": {
