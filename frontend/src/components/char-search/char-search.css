@@ -40,6 +40,25 @@
   color: var(--font-color);
 }
 
+.search-restart-button {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.search-restart-button:hover {
+  transform: translateY(-2px);
+  color: var(--font-color);
+}
+
+.search-restart-button:hover svg {
+  color: var(--font-color);
+}
+
 .search-wrapper svg {
   flex-shrink: 0;
   font-size: 1.2rem;

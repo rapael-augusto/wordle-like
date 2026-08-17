@@ -195,6 +195,8 @@ export default function Unlimited() {
           characters={characters}
           guessedCharacters={characterGuesses}
           disabled={isFinished}
+          restart={true}
+          restartFunc={newGame}
           onGuess={handleGuessAppend}
         />
       ) : (
