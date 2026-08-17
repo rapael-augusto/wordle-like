@@ -91,6 +91,14 @@
     "subtitle": "Por favor recarregue o site!"
   },
   "changelog": {
+    "v1.2": {
+      "date": "2026-08-17",
+      "changes": [
+        "Nova função: Streak. Monstra quantos jogos seguidos diários você ganhou!",
+        "Adicionado botão de reiniciar no modo ilimitado, finalmente;",
+        "Corrigida a comparação de afflatus 'The Twins'."
+      ]
+    },
     "v1.1": {
       "date": "2026-08-06",
       "changes": [

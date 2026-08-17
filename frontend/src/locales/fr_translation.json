@@ -69,7 +69,7 @@
     "list1": "Les versions de collaboration sont traitées comme des \"versions et demie\" en fonction de leurs sorties sur le serveur global ;",
     "list2": "La collaboration AC est considérée comme la version 2.75 car elle se situe entre les versions globales 2.7 et 2.8 ;",
     "list3": "Les réponses quotidiennes peuvent inclure des personnages actuellement disponibles uniquement sur le serveur CN ;",
-    "list4": "Les personnages possédant deux Afflatus considèrent chacun d'eux comme correct. Par exemple, si le personnage du jour est Minéral/Étoile, les propositions avec Minéral ou Étoile seront marquées comme correctes."
+    "list4": "Les personnages possédant deux Afflatus considèrent chacun d'eux comme correct. Par exemple, si le personnage du jour est Minera/Star, les propositions avec Minera ou Star seront marquées comme correctes."
   },
   "winnerModal": {
     "title": "Félicitations !",
@@ -91,6 +91,14 @@
     "subtitle": "Veuillez réactualiser le site web !"
   },
   "changelog": {
+    "v1.2": {
+      "date": "2026-08-17",
+      "changes": [
+        "Nouvelle fonctionnalité : Streak. Affiche le nombre de parties quotidiennes consécutives que vous avez gagnées !",
+        "Ajout d'un bouton pour recommencer en mode illimité, enfin !",
+        "Correction de la comparaison de l'afflatus de 'The Twins'."
+      ]
+    },
     "v1.1": {
       "date": "2026-08-06",
       "changes": [
