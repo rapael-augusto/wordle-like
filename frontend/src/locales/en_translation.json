@@ -91,6 +91,16 @@
     "subtitle": "Please reload the website!"
   },
   "changelog": {
+    "v1.2": {
+      "date": "2026-08-17",
+      "changes": [
+        "New feature: Changelog. It does exactly what you think it does!",
+        "New feature: History. You can now see who yesterday's character was.",
+        "New characters: The Twins (6★, Mineral/Star) and NORA (4★, Spirit).",
+        "New language: French. Special thanks to Loxi (@looxii_) for the translation!",
+        "Minor share text improvement: removed spaces between emoji tiles."
+      ]
+    },
     "v1.1": {
       "date": "2026-08-06",
       "changes": [

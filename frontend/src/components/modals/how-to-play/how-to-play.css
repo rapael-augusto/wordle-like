@@ -14,6 +14,7 @@
 .how-to-play-dropdown {
   width: fit-content;
   max-height: 85vh;
+  max-width: 70vw;
   color: var(--font-color);
   background: color-mix(in srgb, var(--secondary-color) 98%, var(--font-color));
   border: 1px solid var(--primary-color);
@@ -65,4 +66,10 @@ section p {
 
 .changelog-version:not(:last-child) {
   margin-bottom: 1rem;
+}
+
+@media (max-width: 850px) {
+  .how-to-play-dropdown {
+    max-width: 90vw;
+  }
 }

@@ -14,7 +14,7 @@ import ErrorScreen from "../exceptions/error/error";
 import ProgressBar from "../../components/progress-bar/progress-bar";
 import "./home.css";
 import { useTranslation } from "react-i18next";
-import { getBrazilDateString } from "../../utils/date";
+import { getBrazilDate, getBrazilDateString } from "../../utils/date";
 
 const characterService = new CharacterService();
 
@@ -131,11 +131,36 @@ export default function Home() {
 
     stats.daily.played += 1;
 
+    const streak = JSON.parse(
+      localStorage.getItem("streak") ??
+        JSON.stringify({
+          date: todayString,
+          value: 0,
+        }),
+    );
+
     if (won) {
       stats.daily.wins += 1;
       stats.daily.totalGuesses += guessesCount;
+      const yesterday = getBrazilDate();
+      yesterday.setDate(yesterday.getDate() - 1);
+
+      const yesterdayString = `${yesterday.getFullYear()}-${String(
+        yesterday.getMonth() + 1,
+      ).padStart(2, "0")}-${String(yesterday.getDate()).padStart(2, "0")}`;
+
+      if (streak.date === yesterdayString) {
+        streak.value += 1;
+      } else {
+        streak.value = 1;
+      }
+      streak.date = todayString;
+    } else {
+      streak.value = 0;
+      streak.date = todayString;
     }
 
+    localStorage.setItem("streak", JSON.stringify(streak));
     localStorage.setItem("statistics", JSON.stringify(stats));
     localStorage.setItem("statistics-date", todayString);
   };
@@ -178,6 +203,19 @@ export default function Home() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+    const now = getBrazilDate();
+    const tomorrow = new Date(now);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    tomorrow.setHours(0, 0, 0, 0);
+
+    const timeUntilMidnight = tomorrow.getTime() - now.getTime();
+    const timer = setTimeout(() => {
+      window.location.reload();
+    }, timeUntilMidnight);
+    return () => clearTimeout(timer);
+  }, []);
+
   if (loading) return <LoadingScreen />;
   if (error) return <ErrorScreen message={error} />;
 
@@ -216,6 +254,7 @@ export default function Home() {
       <ProgressBar
         currentTries={characterGuesses.length}
         maxTries={MAX_TRIES}
+        streakOn={true}
       />
       <GuessHistory guessedCharacters={characterGuesses} />
       <GuessLegend />

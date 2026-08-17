@@ -71,6 +71,9 @@ def guess_attempt(input: SlugInput):
     if not guess_char:
         return None
 
+    if "/" in guess_char["afflatus"]:
+        guess_char["afflatus"] = guess_char["afflatus"].split("/")
+
     return {
         "name": {
             "value": guess_char["name"],
@@ -84,8 +87,21 @@ def guess_attempt(input: SlugInput):
                 else True,
         },
         "afflatus": {
-            "value": guess_char["afflatus"],
-            "correct": guess_char["afflatus"] == daily_char["afflatus"],
+            "value": (
+                "/".join(guess_char["afflatus"])
+                if isinstance(guess_char["afflatus"], list)
+                else guess_char["afflatus"]
+            ),
+            "correct": (
+                True
+                if daily_char["afflatus"] == guess_char["afflatus"]
+                else "Half"
+                if (
+                    isinstance(guess_char["afflatus"], list)
+                    and daily_char["afflatus"] in guess_char["afflatus"]
+                )
+                else False
+            ),
         },
         "dmg_type": {
             "value": guess_char["dmg_type"],
@@ -109,11 +125,11 @@ def guess_attempt_id(id: int, input: SlugInput):
     guess_char = next((c for c in characters if c["slug"] == input.slug), None)
     specific_char = next((c for c in characters if c["id"] == id), None)
 
-    if not guess_char:
+    if (not guess_char) or (not specific_char):
         return None
-    
-    if not specific_char:
-        return None
+
+    if "/" in guess_char["afflatus"]:
+            guess_char["afflatus"] = guess_char["afflatus"].split("/")
 
     return {
         "name": {
@@ -128,8 +144,21 @@ def guess_attempt_id(id: int, input: SlugInput):
                 else True,
         },
         "afflatus": {
-            "value": guess_char["afflatus"],
-            "correct": guess_char["afflatus"] in (specific_char["afflatus"])
+            "value": (
+                "/".join(guess_char["afflatus"])
+                if isinstance(guess_char["afflatus"], list)
+                else guess_char["afflatus"]
+            ),
+            "correct": (
+                True
+                if specific_char["afflatus"] == guess_char["afflatus"]
+                else "Half"
+                if (
+                    isinstance(guess_char["afflatus"], list)
+                    and specific_char["afflatus"] in guess_char["afflatus"]
+                )
+                else False
+            ),
         },
         "dmg_type": {
             "value": guess_char["dmg_type"],

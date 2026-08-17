@@ -4,6 +4,7 @@ import type { Race } from "./race";
 import type { Rarity } from "./rarity";
 
 export type NumericComparison = "Higher" | "Lower" | true;
+export type AfflatusComparison = boolean | "Half";
 
 export interface GuessResult {
   name: {
@@ -16,7 +17,7 @@ export interface GuessResult {
   };
   afflatus: {
     value: Afflatus;
-    correct: boolean;
+    correct: AfflatusComparison;
   };
   dmg_type: {
     value: Dmg;

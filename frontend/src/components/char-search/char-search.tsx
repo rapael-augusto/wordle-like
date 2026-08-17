@@ -4,11 +4,14 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import "./char-search.css";
 import type { CharacterGuess } from "../../types/characterGuess";
 import type { Character } from "../../types/character";
+import { MdOutlineRestartAlt } from "react-icons/md";
 
 interface CharacterSearchProps {
   characters: Character[];
   guessedCharacters: CharacterGuess[];
   disabled?: boolean;
+  restart?: boolean;
+  restartFunc?: () => Promise<void>;
   onGuess: (guess: string) => Promise<void>;
 }
 
@@ -16,6 +19,8 @@ export default function CharacterSearch({
   characters,
   guessedCharacters,
   disabled = true,
+  restart = false,
+  restartFunc,
   onGuess,
 }: CharacterSearchProps) {
   const { t } = useTranslation();
@@ -123,9 +128,15 @@ export default function CharacterSearch({
         onChange={(e) => setCharacterSearch(e.target.value)}
         onFocus={() => setIsFocused(true)}
         disabled={disabled}
+        autoComplete="off"
         onKeyDown={handleKeyDown}
         name="character-input-search"
       />
+      {restart && (
+        <button className="search-restart-button" onClick={restartFunc} title="Restart">
+          <MdOutlineRestartAlt size={"1.3rem"} />
+        </button>
+      )}
 
       {isFocused && isValidSearch && (
         <div className="search-dropdown">
