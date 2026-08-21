@@ -1,4 +1,4 @@
-## Reverse: 1999 Wordle (Which is now private)
+## Wordle-Like With Game Characters;
 
 ---
 
@@ -251,8 +251,8 @@ docker compose up --build
 #### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/reverse-1999-wordle.git
-cd reverse-1999-wordle
+git clone https://github.com/your-username/wordle-like.git
+cd wordle-like
 ```
 
 #### 2. Database
@@ -265,7 +265,7 @@ python generate-seed.py  # generates seed.sql from data.json
 Then in your PostgreSQL instance:
 
 ```sql
-CREATE DATABASE r1999_wordle;
+CREATE DATABASE wordle-like;
 ```
 
 Run `schema.sql` then `seed.sql` to set up and populate the database.
@@ -307,10 +307,10 @@ Developed by:
 ## A Few, Non Technical, Words:
 
 So, I built this project for two reasons:
-1. I like Reverse: 1999.
-2. There wasn't already a Reverse: 1999 Wordle (at least, I don't think there was at the moment).
+1. I like this game.
+2. There wasn't already a Wordle for it (at least, I don't think there was at the moment), and mostly gachas have one.
 
-Even though it started as a small learning project and a way for me to apply what I knew about React, it also became a journey where I learned how to build a proper back end, create animations, work with the HTML canvas, and much more.
+Even though it started as a small learning project and a way for me to apply what I knew about React, it also became a journey where I learned how to build a proper backend, create animations, work with the HTML canvas, and much more.
 I didn't expect anyone to actually play it, but seeing people enjoy it makes me really proud of having built it.
 
 So, thank you for being here and for witnessing this project. Remember to "Make good use of this umbrella", 'kay?
