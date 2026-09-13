@@ -8,6 +8,13 @@ from database import conn # type: ignore
 from schemas import SlugInput
 import os
 
+def parse_afflatus(val):
+    if isinstance(val, list):
+        return set(val)
+    if isinstance(val, str):
+        return {item.strip() for item in val.split("/") if item.strip()}
+    return set()
+
 app = FastAPI()
 origins = os.getenv("CORS_ORIGINS", "").split(",")
 
@@ -74,6 +81,10 @@ def guess_attempt(input: SlugInput):
     if "/" in guess_char["afflatus"]:
         guess_char["afflatus"] = guess_char["afflatus"].split("/")
 
+    target_set = parse_afflatus(daily_char.get("afflatus"))
+    guess_set = parse_afflatus(guess_char.get("afflatus"))
+    display_val = "/".join(sorted(guess_set))
+
     return {
         "name": {
             "value": guess_char["name"],
@@ -87,19 +98,12 @@ def guess_attempt(input: SlugInput):
                 else True,
         },
         "afflatus": {
-            "value": (
-                "/".join(guess_char["afflatus"])
-                if isinstance(guess_char["afflatus"], list)
-                else guess_char["afflatus"]
-            ),
+            "value": display_val,
             "correct": (
                 True
-                if daily_char["afflatus"] == guess_char["afflatus"]
+                if target_set == guess_set
                 else "Half"
-                if (
-                    isinstance(guess_char["afflatus"], list)
-                    and daily_char["afflatus"] in guess_char["afflatus"]
-                )
+                if bool(target_set & guess_set)
                 else False
             ),
         },
@@ -131,6 +135,10 @@ def guess_attempt_id(id: int, input: SlugInput):
     if "/" in guess_char["afflatus"]:
             guess_char["afflatus"] = guess_char["afflatus"].split("/")
 
+    target_set = parse_afflatus(specific_char.get("afflatus"))
+    guess_set = parse_afflatus(guess_char.get("afflatus"))
+    display_val = "/".join(sorted(guess_set))
+
     return {
         "name": {
             "value": guess_char["name"],
@@ -144,19 +152,12 @@ def guess_attempt_id(id: int, input: SlugInput):
                 else True,
         },
         "afflatus": {
-            "value": (
-                "/".join(guess_char["afflatus"])
-                if isinstance(guess_char["afflatus"], list)
-                else guess_char["afflatus"]
-            ),
+            "value": display_val,
             "correct": (
                 True
-                if specific_char["afflatus"] == guess_char["afflatus"]
+                if target_set == guess_set
                 else "Half"
-                if (
-                    isinstance(guess_char["afflatus"], list)
-                    and specific_char["afflatus"] in guess_char["afflatus"]
-                )
+                if bool(target_set & guess_set)
                 else False
             ),
         },
