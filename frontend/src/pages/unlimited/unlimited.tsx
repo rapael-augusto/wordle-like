@@ -18,7 +18,7 @@ const characterService = new CharacterService();
 
 export default function Unlimited() {
   const [characters, setCharacters] = useState<Character[]>([]);
-  const [unlimitedCharId, setUnlimitedCharId] = useState(0);
+  const [unlimitedCharId, setUnlimitedCharId] = useState(103);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [isWinModalOpen, setIsWinModalOpen] = useState(false);

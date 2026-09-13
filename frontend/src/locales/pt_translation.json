@@ -91,6 +91,13 @@
     "subtitle": "Por favor recarregue o site!"
   },
   "changelog": {
+    "v1.3": {
+      "date": "2026-09-12",
+      "changes": [
+        "Novos personagens: Everecho (6★, Mineral), Cornerstone (6★, Mineral), Hedone (6★, Mineral) e Narcissus (6★, Beast).",
+        "Corrigida a comparação de afflatus 'The Twins', novamente."
+      ]
+    },
     "v1.2": {
       "date": "2026-08-17",
       "changes": [

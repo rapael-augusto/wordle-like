@@ -91,6 +91,13 @@
     "subtitle": "Veuillez réactualiser le site web !"
   },
   "changelog": {
+    "v1.3": {
+      "date": "2026-09-12",
+      "changes": [
+        "Nouveaux personnages: Everecho (6★, Mineral), Cornerstone (6★, Mineral), Hedone (6★, Mineral) et Narcissus (6★, Beast).",
+        "Recorreccion de la comparaison de l'afflatus de 'The Twins'."
+      ]
+    },
     "v1.2": {
       "date": "2026-08-17",
       "changes": [

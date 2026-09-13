@@ -1298,5 +1298,45 @@
     "race": "Unclassified",
     "version": 3.65,
     "slug": "nora"
+  },
+  {
+    "id": 138,
+    "name": "Everecho",
+    "rarity": 6,
+    "afflatus": "Mineral",
+    "dmg_type": "Reality",
+    "race": "Arcanist",
+    "version": 3.8,
+    "slug": "everecho"
+  },
+  {
+    "id": 139,
+    "name": "Cornerstone",
+    "rarity": 6,
+    "afflatus": "Mineral",
+    "dmg_type": "Reality",
+    "race": "Arcanist",
+    "version": 3.8,
+    "slug": "cornerstone"
+  },
+  {
+    "id": 140,
+    "name": "Hedone",
+    "rarity": 6,
+    "afflatus": "Mineral",
+    "dmg_type": "Reality",
+    "race": "Arcanist",
+    "version": 3.9,
+    "slug": "hedone"
+  },
+  {
+    "id": 141,
+    "name": "Narcissus",
+    "rarity": 6,
+    "afflatus": "Beast",
+    "dmg_type": "Mental",
+    "race": "Arcanist",
+    "version": 3.9,
+    "slug": "narcissus"
   }
 ]

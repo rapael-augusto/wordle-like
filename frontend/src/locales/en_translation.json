@@ -91,12 +91,19 @@
     "subtitle": "Please reload the website!"
   },
   "changelog": {
+    "v1.3": {
+      "date": "2026-09-12",
+      "changes": [
+        "New characters: Everecho (6★, Mineral), Cornerstone (6★, Mineral), Hedone (6★, Mineral) and Narcissus (6★, Beast).",
+        "Corrected the comparison of 'The Twins' afflatus, again."
+      ]
+    },
     "v1.2": {
       "date": "2026-08-17",
       "changes": [
         "New feature: Streak. Shows how many consecutive daily games you won!",
         "Added restart button in unlimited mode, finally;",
-        "Corrected the comparison of 'The Twins' afflatus.."
+        "Corrected the comparison of 'The Twins' afflatus."
       ]
     },
     "v1.1": {
