@@ -130,6 +130,10 @@ VALUES
 ('Rhiannon', 'rhiannon', 6, 'Beast', 'Mental', 'Arcanist', 3.7),
 ('Ms. Stranger', 'ms-stranger', 6, 'Mineral', 'Mental', 'Arcanist', 3.7),
 ('The Twins', 'the-twins', 6, 'Mineral/Star', 'Reality', 'Unclassified', 3.65),
-('NORA', 'nora', 4, 'Spirit', 'Reality', 'Unclassified', 3.65)
+('NORA', 'nora', 4, 'Spirit', 'Reality', 'Unclassified', 3.65),
+('Everecho', 'everecho', 6, 'Mineral', 'Reality', 'Arcanist', 3.8),
+('Cornerstone', 'cornerstone', 6, 'Mineral', 'Reality', 'Arcanist', 3.8),
+('Hedone', 'hedone', 6, 'Mineral', 'Reality', 'Arcanist', 3.9),
+('Narcissus', 'narcissus', 6, 'Beast', 'Mental', 'Arcanist', 3.9)
 
 ON CONFLICT (slug) DO NOTHING;
