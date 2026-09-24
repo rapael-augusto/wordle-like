@@ -48,6 +48,16 @@ def get_all_characters():
         "slug": c["slug"]
     } for c in characters ]
 
+@app.get("/characters/full")
+def get_all_characters_full():
+    return [{
+        "name": c["name"],
+        "slug": c["slug"],
+        "afflatus": c["afflatus"],
+        "rarity": c["rarity"],
+        "version": c["version"]
+    } for c in characters]
+
 @app.get("/characters/random-id")
 def get_random_char():
     return {
