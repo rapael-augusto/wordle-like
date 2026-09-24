@@ -31,6 +31,7 @@
     "placeholderFalse": "Tirez sur le fil d'or... ex : Sonetto ;",
     "placeholderTrue": "Un vieil ami, de retour à la maison ;",
     "restartGame": "Rejouer",
+    "giveUp": "Abandonner",
     "result": "Voir le Résultat",
     "noCharacterFound": "Aucun Personnage Trouvé."
   },
@@ -85,10 +86,18 @@
     "title4": "Moy. d'Essais",
     "daily": "Mode Quotidien",
     "unlimited": "Mode Infini",
+    "allCharacters": "Quiz sur tous les personnages",
+    "score": "Score",
     "zero": "Rien à voir ici..., joue d'abord une partie !"
   },
   "errorPage": {
     "subtitle": "Veuillez réactualiser le site web !"
+  },
+  "all-characters": {
+    "label1": "Recherche:",
+    "label2": "Score:",
+    "label3": "Temps:",
+    "startButton": "Jouer au Quiz"
   },
   "changelog": {
     "v1.3": {
