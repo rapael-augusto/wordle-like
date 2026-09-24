@@ -13,13 +13,14 @@ import CharacterSearch from "../../components/char-search/char-search";
 import GuessHistory from "../../components/guess-history/guess-history";
 import GuessLegend from "../../components/guess-legend/guess-legend";
 import { useTranslation } from "react-i18next";
+import { getStoredStatistics } from "../../utils/stats";
 
 const characterService = new CharacterService();
 
 export default function Unlimited() {
   const [characters, setCharacters] = useState<Character[]>([]);
   const [unlimitedCharId, setUnlimitedCharId] = useState(103);
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
   const [isWinModalOpen, setIsWinModalOpen] = useState(false);
   const [characterGuesses, setCharacterGuesses] = useState<CharacterGuess[]>(
@@ -72,21 +73,7 @@ export default function Unlimited() {
     }
     showWinnerModal();
 
-    const stats = JSON.parse(
-      localStorage.getItem("statistics") ??
-        JSON.stringify({
-          daily: {
-            played: 0,
-            wins: 0,
-            totalGuesses: 0,
-          },
-          unlimited: {
-            played: 0,
-            wins: 0,
-            totalGuesses: 0,
-          },
-        }),
-    );
+    const stats = getStoredStatistics();
 
     if (won) {
       stats.unlimited.wins += 1;
@@ -144,15 +131,18 @@ export default function Unlimited() {
 
   const newGame = async () => {
     try {
-      const charId = await characterService.getRandomId();
-      setUnlimitedCharId(charId.id);
-      setCharacterGuesses([]);
+      setIsLoading(true);
       setIsFinished(false);
       setIsWinModalOpen(false);
       setHasStartedGame(false);
+      setCharacterGuesses([]);
+      const charId = await characterService.getRandomId();
+      setUnlimitedCharId(charId.id);
     } catch (e) {
       console.error(e);
       setError("Failed to start new game...");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -166,18 +156,18 @@ export default function Unlimited() {
         setError("Failed to load...");
         console.error(e);
       } finally {
-        setLoading(false);
+        setIsLoading(false);
       }
     };
     fetchCharacters();
   }, []);
 
-  if (loading) return <LoadingScreen />;
+  if (isLoading) return <LoadingScreen />;
   if (error) return <ErrorScreen message={error} />;
 
   return (
     <>
-      {isWinModalOpen && (
+      {isWinModalOpen && characterGuesses?.[0] && (
         <WinnerModal
           character={{
             slug: characterGuesses[0].slug,

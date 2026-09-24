@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import { useTranslation } from "react-i18next";
 import "./statistcs.css";
 import { IoMdClose } from "react-icons/io";
+import { getStoredStatistics } from "../../../utils/stats";
 
 interface StatisticsModalProps {
   onClose: () => void;
@@ -14,9 +15,16 @@ interface StatisticsMetrics {
   totalGuesses: number;
 }
 
+interface AllCharactersMetrics {
+  score: number;
+  seconds: number;
+  minutes: number;
+}
+
 interface StatisticsObjects {
   daily: StatisticsMetrics;
   unlimited: StatisticsMetrics;
+  allCharacters: AllCharactersMetrics;
 }
 
 export default function StatisticsModal({ onClose }: StatisticsModalProps) {
@@ -24,10 +32,10 @@ export default function StatisticsModal({ onClose }: StatisticsModalProps) {
   const { t } = useTranslation();
 
   useEffect(() => {
-    const saved = localStorage.getItem("statistics");
+    const saved = getStoredStatistics();
     if (saved) {
       // eslint-disable-next-line react-hooks/set-state-in-effect
-      setStatistics(JSON.parse(saved));
+      setStatistics(saved);
     }
   }, []);
 
@@ -64,6 +72,7 @@ export default function StatisticsModal({ onClose }: StatisticsModalProps) {
               <p>{dailyMetrics!.averageGuesses}</p>
             </div>
             <hr className="statistcs-break-line" />
+
             <p>{t("statisticsModal.unlimited")}</p>
             <div className="statistics-display-grip">
               {Array.from({ length: 4 }, (_, index) => {
@@ -76,6 +85,16 @@ export default function StatisticsModal({ onClose }: StatisticsModalProps) {
               <p>{unlimitedMetrics!.winRate}%</p>
               <p>{statistics.unlimited.played}</p>
               <p>{unlimitedMetrics!.averageGuesses}</p>
+            </div>
+            <hr className="statistcs-break-line" />
+            
+            <p>{t("statisticsModal.allCharacters")}</p>
+            <div className="statistics-all-characters-display-grip">
+              <p>{t("statisticsModal.score")}</p>
+              <p>{t("all-characters.label3")}</p>
+
+              <p>{statistics.allCharacters.score}</p>
+              <p>{statistics.allCharacters.minutes}:{statistics.allCharacters.seconds}</p>
             </div>
           </div>
         ) : (
