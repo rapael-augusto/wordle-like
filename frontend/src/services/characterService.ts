@@ -15,6 +15,20 @@ export class CharacterService {
     }
   }
 
+  async getAllCharactersFull() {
+    const MAX_RETRIES = 3;
+    for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+      try {
+        const response = await api.get("/characters/full");
+        return response.data;
+      } catch (error) {
+        if (attempt === MAX_RETRIES) {
+          throw error;
+        }
+      }
+    }
+  }
+
   async getRandomId() {
     const response = await api.get("/characters/random-id");
     return response.data;
