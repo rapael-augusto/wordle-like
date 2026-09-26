@@ -1,4 +1,6 @@
-from fastapi import FastAPI
+from typing import Optional
+
+from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from datetime import date, datetime, timedelta
 from zoneinfo import ZoneInfo
@@ -59,9 +61,21 @@ def get_all_characters_full():
     } for c in characters]
 
 @app.get("/characters/random-id")
-def get_random_char():
+def get_random_char(rarities: Optional[str] = Query(default=None)):
+    pool = characters
+
+    if rarities:
+        try:
+            allowed_rarities = {int(r.strip()) for r in rarities.split(",") if r.strip()}
+            pool = [c for c in characters if c.get("rarity") in allowed_rarities]
+        except ValueError:
+            raise HTTPException(status_code=400, detail="Parâmetro rarities inválido")
+
+    if not pool:
+        raise HTTPException(status_code=404, detail="Nenhum personagem encontrado com as raridades selecionadas")
+
     return {
-        "id": rng.choice(characters)["id"]
+        "id": rng.choice(pool)["id"]
     }
 
 @app.get("/characters/{slug}")
