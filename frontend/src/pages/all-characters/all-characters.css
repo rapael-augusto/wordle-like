@@ -130,6 +130,8 @@
   max-height: 60vh;
   overflow-y: auto;
   align-items: start;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-color: var(--secondary-color) var(--primary-color);
 }
 
 .afflatus-column {
