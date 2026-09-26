@@ -206,6 +206,15 @@ export default function Home() {
   if (loading) return <LoadingScreen />;
   if (error) return <ErrorScreen message={error} />;
 
+  const changelog = t("changelog", { returnObjects: true }) as Record<
+    string,
+    {
+      date: string;
+      changes: string[];
+    }
+  >;
+  const CHANGELOG_DATE = Object.values(changelog)[0].date;
+
   return (
     <>
       {isWinModalOpen && dailyCharacter && (
@@ -235,9 +244,12 @@ export default function Home() {
           onGuess={handleGuessAppend}
         />
       )}
-      <p className="yesterday-char">
-        {t("nav.yesterday")} {yesterdayCharacter ? yesterdayCharacter.name : ""}
-      </p>
+      {CHANGELOG_DATE !== todayString ? (
+        <p className="yesterday-char">
+          {t("nav.yesterday")}{" "}
+          {yesterdayCharacter ? yesterdayCharacter.name : ""}
+        </p>
+      ) : null}
       <ProgressBar
         currentTries={characterGuesses.length}
         maxTries={MAX_TRIES}

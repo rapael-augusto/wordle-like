@@ -84,27 +84,12 @@ export default function Unlimited() {
   };
 
   const handleGuessAppend = async (guess: string) => {
-    if (isFinished) return;
+    if (isFinished || !unlimitedCharId) return;
 
     if (!hasStartedGame) {
-      const stats = JSON.parse(
-        localStorage.getItem("statistics") ??
-          JSON.stringify({
-            daily: {
-              played: 0,
-              wins: 0,
-              totalGuesses: 0,
-            },
-            unlimited: {
-              played: 0,
-              wins: 0,
-              totalGuesses: 0,
-            },
-          }),
-      );
+      const stats = getStoredStatistics();
       stats.unlimited.played += 1;
       localStorage.setItem("statistics", JSON.stringify(stats));
-
       setHasStartedGame(true);
     }
 
@@ -160,6 +145,17 @@ export default function Unlimited() {
       }
     };
     fetchCharacters();
+  }, []);
+
+  useEffect(() => {
+    const handleFilterChange = () => {
+      newGame();
+    };
+
+    window.addEventListener("storage_filter_changed", handleFilterChange);
+    return () => {
+      window.removeEventListener("storage_filter_changed", handleFilterChange);
+    };
   }, []);
 
   if (isLoading) return <LoadingScreen />;
