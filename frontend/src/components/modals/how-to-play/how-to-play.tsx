@@ -104,7 +104,7 @@ export default function HowToPlayModal({ onClose }: HowToPlayModalProps) {
                 {Array.from({ length: 4 }, (_, index) => {
                   return <li>{t(`htpModal.list${index + 1}`)}</li>;
                 })}
-                <li>Up to 3.7;</li>
+                <li>Up to 3.9;</li>
               </ul>
             </section>
           </>
