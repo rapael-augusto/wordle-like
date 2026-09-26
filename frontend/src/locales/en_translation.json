@@ -100,6 +100,13 @@
     "startButton": "Play Quiz"
   },
   "changelog": {
+    "v2.0": {
+      "date": "2026-09-25",
+      "changes": [
+        "New gamemode: All-Characters, try to remember the name of all... 134 (of now) characters!",
+        "New settings option: filter, now you can filter unlimited mode rarity for characters."
+      ]
+    },
     "v1.3": {
       "date": "2026-09-12",
       "changes": [

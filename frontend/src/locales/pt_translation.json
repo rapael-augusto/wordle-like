@@ -100,6 +100,13 @@
     "startButton": "Jogar Quiz"
   },
   "changelog": {
+    "v2.0": {
+      "date": "2026-09-25",
+      "changes": [
+        "Novo modo de jogo: Todos os Personagens. Tente lembrar o nome de todos os... 134 (até agora) personagens!",
+        "Nova opção nas configurações: filtro. Agora você pode filtrar a raridade dos personagens no modo ilimitado."
+      ]
+    },
     "v1.3": {
       "date": "2026-09-12",
       "changes": [
