@@ -100,6 +100,13 @@
     "startButton": "Jouer au Quiz"
   },
   "changelog": {
+    "v2.0": {
+      "date": "2026-09-25",
+      "changes": [
+        "Nouveau mode de jeu : Tous les personnages. Essayez de retenir le nom des... 134 personnages (pour l'instant) !",
+        "Nouvelle option dans les paramètres : filtre. Vous pouvez maintenant filtrer la rareté des personnages en mode illimité."
+      ]
+    },
     "v1.3": {
       "date": "2026-09-12",
       "changes": [
