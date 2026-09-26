@@ -31,6 +31,7 @@
     "placeholderFalse": "Pull the golden thread... e.g: Sonetto;",
     "placeholderTrue": "An old friend, back home;",
     "restartGame": "Play Again",
+    "giveUp": "Give Up",
     "result": "See result",
     "noCharacterFound": "No Character Found."
   },
@@ -85,10 +86,18 @@
     "title4": "Guess Avg",
     "daily": "Daily mode",
     "unlimited": "Unlimited mode",
+    "allCharacters": "All-characters quiz",
+    "score": "Score",
     "zero": "Nothing to see here..., play a game first!"
   },
   "errorPage": {
     "subtitle": "Please reload the website!"
+  },
+  "all-characters": {
+    "label1": "Search:",
+    "label2": "Score:",
+    "label3": "Time:",
+    "startButton": "Play Quiz"
   },
   "changelog": {
     "v1.3": {

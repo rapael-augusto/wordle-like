@@ -43,6 +43,19 @@
   text-align: center;
 }
 
+.statistics-all-characters-display-grip {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 1rem;
+  text-align: center;
+}
+
+.statistics-all-characters-display-grip p:nth-child(n + 3) {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
 .statistics-display-grip p:nth-child(-n + 4) {
   font-size: 0.9rem;
   opacity: 0.8;

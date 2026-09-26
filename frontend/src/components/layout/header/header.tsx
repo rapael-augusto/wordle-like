@@ -30,9 +30,18 @@ export default function Header({
     unknown
   >;
   const CHANGELOG_VERSION = Object.keys(changelog)[0];
+  const DEFAULT_FILTER = [2, 3, 4, 5, 6];
 
   const [isThemeDropdownOpen, setIsThemeDropdownOpen] = useState(false);
   const [isSettingsDropdownOpen, setIsSettingsDropdownOpen] = useState(false);
+  const [selectedRarities, setSelectedRarities] = useState<number[]>(() => {
+    try {
+      const saved = localStorage.getItem("filter");
+      return saved ? JSON.parse(saved) : DEFAULT_FILTER;
+    } catch {
+      return DEFAULT_FILTER;
+    }
+  });
   const [isHtpModalOpen, setIsHtpModalOpen] = useState(() => {
     const saved = localStorage.getItem("statistics");
     const lastSeenChangelog = localStorage.getItem("changelog-version");
@@ -76,6 +85,28 @@ export default function Header({
     const nextAnimationStatus = !isAnimationOn;
     setIsAnimationOn(nextAnimationStatus);
     localStorage.setItem("animation", nextAnimationStatus.toString());
+  };
+
+  const handleFilterChange = (rarity: number) => {
+    setSelectedRarities((prev) => {
+      const isSelected = prev.includes(rarity);
+
+      // Evita desmarcar todos (o jogo ficaria sem nenhum personagem)
+      if (isSelected && prev.length === 1) {
+        return prev;
+      }
+
+      const next = isSelected
+        ? prev.filter((r) => r !== rarity)
+        : [...prev, rarity].sort((a, b) => a - b);
+
+      localStorage.setItem("filter", JSON.stringify(next));
+
+      // Reminder: Don't delete this (and look into more of these 'events' later);
+      window.dispatchEvent(new Event("storage_filter_changed"));
+
+      return next;
+    });
   };
 
   useEffect(() => {
@@ -145,7 +176,7 @@ export default function Header({
             <div className="header-dropdown" ref={settingsRef}>
               <div className="switch-wrapper">
                 <p>
-                  {t("header.dropdowns.settings.animations")}{" "}
+                  {t("header.dropdowns.settings.animations")}:{" "}
                   {isAnimationOn
                     ? t("header.dropdowns.settings.on")
                     : t("header.dropdowns.settings.off")}
@@ -161,6 +192,7 @@ export default function Header({
                   <span className="slider"></span>
                 </label>
               </div>
+              
               <div className="select-wrapper">
                 <p>{t("header.dropdowns.settings.language")}:</p>
                 <select
@@ -172,6 +204,21 @@ export default function Header({
                   <option value={"pt"}>Português</option>
                   <option value={"fr"}>Français</option>
                 </select>
+              </div>
+
+              <div className="filter-wrapper">
+                <p>Filtro Ilimitado:</p>
+                {DEFAULT_FILTER.map((rarity) => (
+                  <label key={rarity}>
+                    <input
+                      type="checkbox"
+                      value={rarity}
+                      checked={selectedRarities.includes(rarity)}
+                      onChange={() => handleFilterChange(rarity)}
+                    />
+                    {rarity}✦
+                  </label>
+                ))}
               </div>
             </div>
           )}

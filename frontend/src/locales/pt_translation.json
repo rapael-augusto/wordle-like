@@ -31,6 +31,7 @@
     "placeholderFalse": "Puxe o fio dourado... ex.: Sonetto;",
     "placeholderTrue": "Um velho amigo, de volta ao lar;",
     "restartGame": "Jogar Novamente",
+    "giveUp": "Desistir",
     "result": "Ver resultado",
     "noCharacterFound": "Nenhum personagem encontrado."
   },
@@ -85,10 +86,18 @@
     "title4": "Média de Tentativas",
     "daily": "Modo diário",
     "unlimited": "Modo ilimitado",
+    "allCharacters": "Quiz dos personagens",
+    "score": "Pontuação",
     "zero": "Nada para ver aqui..., jogue uma partida primeiro!"
   },
   "errorPage": {
     "subtitle": "Por favor recarregue o site!"
+  },
+  "all-characters": {
+    "label1": "Pesquisa:",
+    "label2": "Pontuação:",
+    "label3": "Tempo:",
+    "startButton": "Jogar Quiz"
   },
   "changelog": {
     "v1.3": {

@@ -15,6 +15,7 @@ import ProgressBar from "../../components/progress-bar/progress-bar";
 import "./home.css";
 import { useTranslation } from "react-i18next";
 import { getBrazilDate, getBrazilDateString } from "../../utils/date";
+import { getStoredStatistics } from "../../utils/stats";
 
 const characterService = new CharacterService();
 
@@ -113,21 +114,7 @@ export default function Home() {
       localStorage.getItem("statistics-date") === todayString;
     if (alreadyUpdated) return;
 
-    const stats = JSON.parse(
-      localStorage.getItem("statistics") ??
-        JSON.stringify({
-          daily: {
-            played: 0,
-            wins: 0,
-            totalGuesses: 0,
-          },
-          unlimited: {
-            played: 0,
-            wins: 0,
-            totalGuesses: 0,
-          },
-        }),
-    );
+    const stats = getStoredStatistics();
 
     stats.daily.played += 1;
 
@@ -219,6 +206,15 @@ export default function Home() {
   if (loading) return <LoadingScreen />;
   if (error) return <ErrorScreen message={error} />;
 
+  const changelog = t("changelog", { returnObjects: true }) as Record<
+    string,
+    {
+      date: string;
+      changes: string[];
+    }
+  >;
+  const CHANGELOG_DATE = Object.values(changelog)[0].date;
+
   return (
     <>
       {isWinModalOpen && dailyCharacter && (
@@ -248,9 +244,12 @@ export default function Home() {
           onGuess={handleGuessAppend}
         />
       )}
-      <p className="yesterday-char">
-        {t("nav.yesterday")} {yesterdayCharacter ? yesterdayCharacter.name : ""}
-      </p>
+      {CHANGELOG_DATE !== todayString ? (
+        <p className="yesterday-char">
+          {t("nav.yesterday")}{" "}
+          {yesterdayCharacter ? yesterdayCharacter.name : ""}
+        </p>
+      ) : null}
       <ProgressBar
         currentTries={characterGuesses.length}
         maxTries={MAX_TRIES}
