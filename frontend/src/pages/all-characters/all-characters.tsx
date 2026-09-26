@@ -162,11 +162,17 @@ export default function AllCharacters() {
       intellect: [],
     };
     characters.forEach((char) => {
-      const afflatuses = char.afflatus.includes("/")
-        ? char.afflatus.split("/")
-        : [char.afflatus];
+      if (!char.afflatus) return;
+      let afflatuses: string[] = [];
+      if (Array.isArray(char.afflatus)) {
+        afflatuses = char.afflatus.flat().map(String);
+      } else if (typeof char.afflatus === "string") {
+        afflatuses = char.afflatus.includes("/")
+          ? char.afflatus.split("/")
+          : [char.afflatus];
+      }
       afflatuses.forEach((aff) => {
-        const key = aff.toLowerCase();
+        const key = String(aff).trim().toLowerCase();
         if (grouped[key]) {
           grouped[key].push(char);
         }
@@ -182,6 +188,7 @@ export default function AllCharacters() {
         });
       });
     });
+
     return grouped;
   }, [characters]);
 
